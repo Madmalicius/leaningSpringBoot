@@ -1,0 +1,21 @@
+<!--
+    ----------- THIS IS A TEMPLATE -----------
+    
+    This is used as a template for new pages during the project.
+    It uses the header and banner from the main_layout, so only
+    the container needs to be filled out.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layouts/main_layout :: head(title = 'Springit - Spring Boot Reddit Clone')}">
+</head>
+<body>
+    <nav th:replace="~{layouts/main_layout :: nav}"></nav>
+    <div th:replace="~{layouts/main_layout :: jumbotron}"></div>
+    <div class="containter">
+        content...
+    </div>
+</body>
+</html>
