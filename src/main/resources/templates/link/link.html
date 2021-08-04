@@ -6,6 +6,13 @@
     <nav th:replace="~{layouts/main_layout :: nav}"></nav>
     <div th:replace="~{layouts/main_layout :: jumbotron}"></div>
     <div class="containter">
+        
+        <!-- New link popup -->
+        <div class="alert alert-success" role="alert" th:if="${success}">
+            Link created successfully.
+        </div>
+
+
         <!-- links -->
         <div class="row link">
             <div class="col-1">
@@ -36,7 +43,7 @@
         <div class="comments">
             <div class="row header">
                 <div class="col-1">&nbsp;</div>
-                <div class="col-11 title">
+                <div class="col-11 title" th:text="|all ${link.getComments().size()} comments|">
                     all 21 comments
                 </div>
             </div>
