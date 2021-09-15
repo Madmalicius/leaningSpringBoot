@@ -64,7 +64,7 @@
                             <p class="card-text">
                                 <a th:href="@{'/u/' + ${user.getUsername()}}" th:text="|/u/${user.getUsername()}|">/u/thereal</a>
                             </p>
-                            <a href="../link/submit.html"><button type="button" class="btn btn-primary btn-lg btn-block">New Post</button></a>
+                            <a th:if="${currentUser}" class="nav-link" th:href="@{/link/submit}"><button type="button" class="btn btn-primary btn-lg btn-block">New Post</button></a>
                         </div>
                     </div>
                 </div>
@@ -74,9 +74,9 @@
                         <div class="card-body">
                             <h5 class="card-title">Your Information</h5>
                             <p class="card-text">
-                                Posts: 10<br/>
-                                Comments: 3<br/>
-                                User Since: November 23, 2017<br/>
+                                <a th:text="|Posts: ${user.getLinks().size()}">Posts: 10</a><br/>
+                                <a th:text="|Comments: ${user.getComments().size()}">Comments: 3</a><br/>
+                                <a>User Since: November 23, 2017</a><br/>
                             </p>
                         </div>
                     </div>
